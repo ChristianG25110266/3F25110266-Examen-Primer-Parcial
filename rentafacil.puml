@@ -1,0 +1,48 @@
+@startuml
+
+class Vehiculo {
+  - placa
+  - marca
+  - modelo
+  - anioFabricacion
+  - precioPorDia
+}
+
+class Auto {
+}
+
+class Moto {
+  - cilindrada
+}
+
+class Camioneta {
+  - capacidadCargaKg
+}
+
+class Cliente {
+  - id
+  - nombre
+  - dni
+  - telefono
+  + registrarCliente()
+}
+
+class Alquiler {
+  - codigoAlquiler
+  - fechaInicio
+  - fechaFin
+  - costoTotal
+  - estado
+  + calcularCostoTotal()
+  + finalizarAlquiler()
+}
+
+Auto --|> Vehiculo
+Moto --|> Vehiculo
+Camioneta --|> Vehiculo
+
+Cliente o-- Alquiler
+Alquiler o-- Vehiculo
+Cliente o-- Vehiculo
+
+@enduml
